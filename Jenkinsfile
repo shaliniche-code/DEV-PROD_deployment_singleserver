@@ -44,7 +44,7 @@ pipeline {
                  stage("Deploy DEV") {
                     steps {
                        sh '''
-                       ssh ubuntu@3.109.132.79 "
+                       ssh ubuntu@172.31.32.205 "
                         
                         docker pull shalinidocker12/pythonapp:latest
 

@@ -6,7 +6,7 @@ pipeline {
                   steps {
                        git branch: 'main', 
                            credentialsId: 'github-ssh', 
-                           url: 'git@github.com:shaliniche-code/DEV-PROD_deployment_singleserver.git
+                           url: 'git@github.com:shaliniche-code/DEV-PROD_deployment_singleserver.git'
                       }
 }
                stage("listing the files") {

@@ -50,12 +50,18 @@ pipeline {
 
                         docker stop devapp || true
                         docker rm -f  devapp || true
-
+                       
+                        echo '===== AFTER REMOVE ====='
+                        docker ps -a
+                        
                         docker run -d \
                         --name devapp \
                         -p 5000:5000 \
                         -e APP_ENV=Development \
                         shalinidocker12/pythonapp:latest
+                        
+                        echo '===== AFTER RUN ====='
+                        docker ps -a
                         " 
                         '''
 }

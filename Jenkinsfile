@@ -98,7 +98,7 @@ pipeline {
                           --name prodapp \
                           -p 5001:5000 \
                           -e APP_ENV=PRODUCTION \
-                          pythonapp:latest
+                          shalinidocker12/pythonapp:latest
                           "
                           '''
 }

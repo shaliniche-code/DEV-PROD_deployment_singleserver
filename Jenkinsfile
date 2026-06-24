@@ -93,7 +93,7 @@ pipeline {
                           docker build -t pythonapp .
               
                           docker stop prodapp || true
-                          docker rm -f  prodappp || true
+                          docker rm -f  prodapp || true
                      
                           docker run -d \
                           --name prodapp \

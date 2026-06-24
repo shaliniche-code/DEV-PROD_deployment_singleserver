@@ -86,6 +86,7 @@ pipeline {
                   stage("PROD Deployment") {
                      steps {
                           sh '''
+                          ssh ubuntu@172.31.32.205 "
                           
                           docker pull shalinidocker12/pythonapp:latest
                           docker rmi pythonapp || true
@@ -99,6 +100,7 @@ pipeline {
                           -p 5001:5000 \
                           -e APP_ENV=PRODUCTION \
                           pythonapp:latest
+                          "
                           '''
 }
 }

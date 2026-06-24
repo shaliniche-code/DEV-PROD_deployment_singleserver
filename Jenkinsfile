@@ -93,6 +93,7 @@ pipeline {
                           --p 5001:5000 \
                           -e APP_ENV=PRODUCTION \
                           pythonimage:latest
+                          '''
 }
 }
                       

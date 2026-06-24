@@ -81,9 +81,9 @@ pipeline {
                      steps {
                           sh '''
                           
-                          docker pull shalinidocker12/pythonimage:latest
-                          docker rmi pythonimage || true
-                          docker build -t pythonimage .
+                          docker pull shalinidocker12/pythonapp:latest
+                          docker rmi pythonapp || true
+                          docker build -t pythonapp .
               
                           docker stop prodapp || true
                           docker rm -f  prodappp || true
@@ -92,7 +92,7 @@ pipeline {
                           --name prodapp \
                           --p 5001:5000 \
                           -e APP_ENV=PRODUCTION \
-                          pythonimage:latest
+                          pythonapp:latest
                           '''
 }
 }

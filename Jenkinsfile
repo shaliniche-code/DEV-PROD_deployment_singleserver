@@ -90,7 +90,7 @@ pipeline {
                      
                           docker run -d \
                           --name prodapp \
-                          --p 5001:5000 \
+                          -p 5001:5000 \
                           -e APP_ENV=PRODUCTION \
                           pythonapp:latest
                           '''

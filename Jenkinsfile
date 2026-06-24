@@ -89,8 +89,7 @@ pipeline {
                           ssh ubuntu@172.31.32.205 "
                           
                           docker pull shalinidocker12/pythonapp:latest
-                          docker rmi pythonapp || true
-                          docker build -t pythonapp .
+                         
               
                           docker stop prodapp || true
                           docker rm -f  prodapp || true

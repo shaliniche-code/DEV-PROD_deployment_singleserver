@@ -49,7 +49,7 @@ pipeline {
                         docker pull shalinidocker12/pythonapp:latest
 
                         docker stop devapp || true
-                        docker rm devapp || true
+                        docker rm -f  devapp || true
 
                         docker run -d \
                         --name devapp \
@@ -86,7 +86,7 @@ pipeline {
                           docker build -t pythonimage .
               
                           docker stop prodapp || true
-                          docker rm prodappp || true
+                          docker rm -f  prodappp || true
                      
                           docker run -d \
                           --name prodapp \

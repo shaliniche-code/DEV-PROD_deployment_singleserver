@@ -65,7 +65,7 @@ pipeline {
                         sh '''
                         ssh ubuntu@172.31.32.205 "
                         sleep 10
-                        curl -f http://
+                        curl -f http://localhost:5000
                         "
                         '''
 }

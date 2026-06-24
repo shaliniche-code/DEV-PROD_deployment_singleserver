@@ -60,6 +60,41 @@ pipeline {
                         '''
 }
 }
+                   stage("Health check") {
+                    steps {
+                        sh '''
+                        ssh ubuntu@172.31.32.205 "
+                        sleep 10
+                        curl -f http://
+                        "
+                        '''
+}
+}
+                  stage("Approval") {
+                    steps {
+                        input 'Deploy to production?'
+                        }
+}
+
+
+                  stage("PROD Deployment") {
+                     steps {
+                          sh '''
+                          
+                          docker pull shalinidocker12/pythonimage:latest
+                          docker rmi pythonimage || true
+                          docker build -t pythonimage .
+              
+                          docker stop prodapp || true
+                          docker rm prodappp || true
+                     
+                          docker run -d \
+                          --name prodapp \
+                          --p 5001:5000 \
+                          -e APP_ENV=PRODUCTION \
+                          pythonimage:latest
+}
+}
                       
 }
 }                     
